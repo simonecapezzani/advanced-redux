@@ -18,11 +18,7 @@ const ProductItem = (props) => {
       id,
       title,
       price,
-    }))
-  };
-
-  const removeFromCartHandler = () => {
-    dispatch(cartActions.removeFromCart(id))
+    }));
   };
 
   return (
