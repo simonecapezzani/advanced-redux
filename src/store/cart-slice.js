@@ -13,6 +13,7 @@ const cartSlice = createSlice({
         addToCart(state, action) {
             const newItem = action.payload;
             const existingItem = state.items.find(item => item.id === newItem.id);
+            state.totalQuantity++;
             if (!existingItem) {
                 // we can push in state thanks to redux toolkit
                 state.items.push({
@@ -29,6 +30,7 @@ const cartSlice = createSlice({
         removeFromCart(state, action) {
             const id = action.id;
             const existingItem = state.items.find(item => item.id === id);
+            state.totalQuantity--;
             if (existingItem.quantity === 1) {
                 state.items = state.items.filter(item => item.id !== id);
             } else {

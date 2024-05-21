@@ -9,12 +9,17 @@ const DUMMY_PRODUCTS = [
 
 
 const Products = (props) => {
+
+
+
   return (
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul>
         {DUMMY_PRODUCTS.map((prod) => {
           return <ProductItem
+            key={prod.id}
+            id={prod.id}
             title={prod.title}
             price={prod.price}
             description={prod.description}
